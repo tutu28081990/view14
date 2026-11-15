@@ -24,15 +24,15 @@ pipeline {
         }
         stage("Build Docker Image") {
             steps {
-                sh "docker build -t starbucks ."
+                sh "docker build -t nodedemo01 ."
             }
         }
         stage("Tag & Push to DockerHub") {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
-                        sh "docker tag starbucks vikas4cloud/starbucks:latest"
-                        sh "docker push vikas4cloud/starbucks:latest"
+                        sh "docker tag nodedemo01 mj2808/nodedemo01:latest"
+                        sh "docker push mj2808/nodedemo01:latest"
                     }
                 }
             }
