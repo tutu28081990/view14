@@ -46,7 +46,7 @@ pipeline {
         stage("Deploy to EC2") {
             steps {
                 withCredentials([sshUserPrivateKey(
-                    credentialsId: 'ec2-deploy-key',
+                    credentialsId: 'nodemoec2',
                     keyFileVariable: 'SSH_KEY',
                     usernameVariable: 'SSH_USER'
                 )]) {
